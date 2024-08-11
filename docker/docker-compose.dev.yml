@@ -9,14 +9,14 @@ services:
     build:
       context: ..
       dockerfile: ./docker/Dockerfile
-      cache_from:
-        - type=local,src=./.docker_cache_dev
-      cache_to:
-        - type=local,dest=./.docker_cache_dev
+      # cache_from:
+      #   - type=local,src=./.docker_cache_dev
+      # cache_to:
+      #   - type=local,dest=./.docker_cache_dev
     container_name: paradedb-dev
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydatabase
     ports:
-      - "5432:5432"
+      - "5433:5432"
